@@ -24,7 +24,7 @@
 - 值得紀錄的錯誤：
   1. Sort the people alphabetically by last name
      雖然知道排序是由左至右依照字母，但不太確定如何拆出來
-     ※ 需再熟悉sort如何靈活運用
+      <div style="color: #e63946">※ 需再熟悉sort如何靈活運用</div>
   2. Sum up the instances of each of these
      邏輯上大致清楚，但思考方向為array，若改以object思考則應該可以寫出。
-     ※ 需再熟悉reduce如何靈活運用於資料變形
+     <div style="color: #e63946">※ 需再熟悉reduce如何靈活運用於資料變形</div>
