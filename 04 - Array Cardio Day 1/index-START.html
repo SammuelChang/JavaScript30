@@ -37,28 +37,66 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+      const EarlyInventors = inventors.filter(inventor => Math.floor(inventor.year/100) === 15);
+      console.log('EarlyInventors', EarlyInventors);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+      const InventorsFullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+      console.log('InventorsFullName', InventorsFullName);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+      const SortedInventors = inventors.sort((a, b) => a.year - b.year);
+      console.table(SortedInventors);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+      const sumOfInventorsLife = inventors.reduce((sum, cur) => {
+        const livingYears = cur.passed - cur.year;
+        return sum + livingYears
+      }, 0)
+      console.log('sumOfInventorsLife', sumOfInventorsLife);
 
     // 5. Sort the inventors by years lived
+     const DetailInventors = 
+      inventors
+      .reduce((arr, cur) => {
+          cur.livingYears = cur.passed - cur.year;
+          return [...arr, cur];
+        }, [])
+      .sort((a, b) => a.livingYears - b.livingYears);
 
+      console.table(DetailInventors);
+    
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+      // 不是很順，sort的自由運用不太熟悉
+      const alpha = people.sort((lastOne, nextOne) => {
+        const [aLast, aFirst] = lastOne.split(', ');
+        const [bLast, bFirst] = nextOne.split(', ');
+        return aLast - bLast ? 1 : -1;
+      });
+      console.log(alpha);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    // 好難，不會的地方在於判斷是否出現過的邏輯撰寫
+    // 如果出現過，必須加數量加一，否則assign為0
+    const transportation = data.reduce(function(obj, item) {
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
+
+    console.log(transportation);
 
   </script>
 </body>
