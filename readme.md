@@ -28,3 +28,8 @@
   2. Sum up the instances of each of these
      邏輯上大致清楚，但思考方向為array，若改以object思考則應該可以寫出。
      <div style="color: #e63946">※ 需再熟悉reduce如何靈活運用於資料變形</div>
+
+### 05 - Flex Panels Image Gallery
+- 主旨：熟悉flex操作
+- 相關概念：flexbox, transitionend
+- 值得紀錄的錯誤：(略)
